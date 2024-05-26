@@ -100,6 +100,8 @@ fi
 # The default_* and no_* can be used to keep the default behaviour.
 
 # shellcheck disable=SC1143,SC2128
+
+:  << !
 if [ -z "$TMUX_POWERLINE_LEFT_STATUS_SEGMENTS" ]; then
 	TMUX_POWERLINE_LEFT_STATUS_SEGMENTS=(
 		"tmux_session_info 148 234"
@@ -139,4 +141,25 @@ if [ -z "$TMUX_POWERLINE_RIGHT_STATUS_SEGMENTS" ]; then
 		"time 235 136 ${TMUX_POWERLINE_SEPARATOR_LEFT_THIN}"
 		#"utc_time 235 136 ${TMUX_POWERLINE_SEPARATOR_LEFT_THIN}"
 	)
+fi
+!
+
+if [ -z "$TMUX_POWERLINE_LEFT_STATUS_SEGMENTS" ]; then
+        TMUX_POWERLINE_LEFT_STATUS_SEGMENTS=(
+                "tmux_session_info 148 234"
+                "hostname 33 0"
+                "lan_ip 24 255 "
+                "wan_ip 20 255"
+                "ifstat 30 255"
+        )
+fi
+
+if [ -z "$TMUX_POWERLINE_RIGHT_STATUS_SEGMENTS" ]; then
+        TMUX_POWERLINE_RIGHT_STATUS_SEGMENTS=(
+                "uptime 79 111"
+                "pwd 89 211"
+                "disk_usage 92 167"
+                "tmux_mem_cpu_load 78 136"
+                "date 200 136"
+        )
 fi
